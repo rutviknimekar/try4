@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const riddles = [
+const quizData = [
         { question: "I list the standards for drugs to be imported. Which schedule am I?", answer: "Schedule A" },
         { question: "I provide the form for the application of import of drugs. Which schedule am I?", answer: "Schedule B" },
         { question: "I set the standards for biological products. Which schedule am I?", answer: "Schedule C" },
@@ -34,48 +33,4 @@ document.addEventListener('DOMContentLoaded', function() {
         { question: "I list the standards for the storage of certain drugs. Which schedule am I?", answer: "Schedule W" },
         { question: "I provide the standards for clinical trials and studies. Which schedule am I?", answer: "Schedule X" },
         { question: "I am about the standards for imported cosmetics. Which schedule am I?", answer: "Schedule Y" }
-    ];
-
-    const riddlesContainer = document.getElementById('riddles-container');
-
-    riddles.forEach((riddle, index) => {
-        const riddleDiv = document.createElement('div');
-        riddleDiv.classList.add('riddle');
-
-        const questionPara = document.createElement('p');
-        questionPara.textContent = riddle.question;
-
-        const inputAnswer = document.createElement('input');
-        inputAnswer.type = 'text';
-        inputAnswer.classList.add('input-answer');
-        inputAnswer.placeholder = 'Your answer here...';
-
-        const checkButton = document.createElement('button');
-        checkButton.textContent = 'Show Answer';
-        checkButton.onclick = () => showAnswer(index, riddle.answer);
-
-        const answerPara = document.createElement('p');
-        answerPara.classList.add('answer');
-        answerPara.id = `correct-answer-${index}`;
-        answerPara.textContent = `The answer is: ${riddle.answer}`;
-
-        riddleDiv.appendChild(questionPara);
-        riddleDiv.appendChild(inputAnswer);
-        riddleDiv.appendChild(checkButton);
-        riddleDiv.appendChild(answerPara);
-
-        riddlesContainer.appendChild(riddleDiv);
-    });
-});
-
-function startQuiz() {
-    document.getElementById('start-page').classList.add('hidden');
-    document.getElementById('riddles-container').classList.remove('hidden');
-}
-
-function showAnswer(index, correctAnswer) {
-    const answerPara = document.getElementById(`correct-answer-${index}`);
-    answerPara.style.display = 'block';
-    answerPara.style.color = 'green';
-    answerPara.textContent = `The answer is: ${correctAnswer}`;
-}
+];
