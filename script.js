@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const questionPara = document.createElement('p');
         questionPara.textContent = riddle.question;
 
+        const inputAnswer = document.createElement('input');
+        inputAnswer.type = 'text';
+        inputAnswer.classList.add('input-answer');
+        inputAnswer.placeholder = 'Your answer here...';
+
         const checkButton = document.createElement('button');
         checkButton.textContent = 'Show Answer';
         checkButton.onclick = () => showAnswer(index, riddle.answer);
@@ -52,15 +57,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const answerPara = document.createElement('p');
         answerPara.classList.add('answer');
         answerPara.id = `correct-answer-${index}`;
-        answerPara.textContent = `Correct answer: ${riddle.answer}`;
+        answerPara.textContent = `The answer is: ${riddle.answer}`;
 
         riddleDiv.appendChild(questionPara);
+        riddleDiv.appendChild(inputAnswer);
         riddleDiv.appendChild(checkButton);
         riddleDiv.appendChild(answerPara);
 
         riddlesContainer.appendChild(riddleDiv);
     });
 });
+
+function startQuiz() {
+    document.getElementById('start-page').classList.add('hidden');
+    document.getElementById('riddles-container').classList.remove('hidden');
+}
 
 function showAnswer(index, correctAnswer) {
     const answerPara = document.getElementById(`correct-answer-${index}`);
