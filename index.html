@@ -33,6 +33,12 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .start-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
         .riddle {
             margin-bottom: 20px;
             padding: 15px;
@@ -44,7 +50,6 @@
             margin: 0 0 10px 0;
         }
         .answer, .input-answer {
-            display: none;
             margin-top: 10px;
         }
         .input-answer {
@@ -73,7 +78,7 @@
     </style>
 </head>
 <body>
-    <div class="container" id="start-page">
+    <div class="container start-page" id="start-page">
         <h2>LET'S TEST YOUR KNOWLEDGE OF SCHEDULES</h2>
         <button onclick="startQuiz()">Let's Begin</button>
     </div>
