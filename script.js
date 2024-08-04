@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         { question: "I list the drugs which can be marketed under generic names only. Which schedule am I?", answer: "Schedule W" },
         { question: "I set the standards for biological products. Which schedule am I?", answer: "Schedule C" },
         { question: "I ENSURE that antibiotics are not missused. Which schedule am I?", answer: "Schedule HX" },
+        { Prepared By:- Lalit Nimekar (36),
+                        Maharishi Ahirrao (37),
+                        3rd Year B. Pharm,
+                        Dr. D. Y. Patil College of Pharmacy, Akurdi, Pune.},
+                        
     ];
 
     const riddlesContainer = document.getElementById('riddles-container');
