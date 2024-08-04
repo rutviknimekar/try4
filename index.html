@@ -75,6 +75,37 @@
         .hidden {
             display: none;
         }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 80%;
+        }
+        .popup h3 {
+            margin: 0 0 10px 0;
+        }
+        .popup p {
+            margin: 0 0 20px 0;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +115,19 @@
     </div>
     <div class="container hidden" id="riddles-container">
         <h1>Riddles on Schedules</h1>
-        <!-- Riddles will be dynamically inserted here -->
+        <div id="riddles"></div>
+        <div class="footer">
+            <p>Lalit Nimekar Roll No 36</p>
+            <p>Maharshi Ahirrao Roll No 37</p>
+            <p>Third Year</p>
+            <p>Dr. D. Y. Patil College of Pharmacy, Akurdi, Pune</p>
+        </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="popup hidden" id="popup">
+        <h3>Explanation</h3>
+        <p id="popup-text"></p>
+        <button onclick="closePopup()">Close</button>
     </div>
     <script src="script.js"></script>
 </body>
