@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const riddles = [
-        { question: "I list the standards for drugs to be imported. Which schedule am I?", answer: "Schedule A" },
+        { question: "I keep the forms and formats of letters for applications of licensing. Which schedule am I?", answer: "Schedule A" },
         { question: "I provide the form for the application of import of drugs. Which schedule am I?", answer: "Schedule B" },
         { question: "Under me those disease are kept whose drugs are not avilable in market. Which schedule am I?", answer: "Schedule J" },
         { question: "I List the drugs which are habit-forming psychotropic and other drugs likely to be misused for addictive purposes. Which schedule am I?", answer: "Schedule X" },
@@ -33,15 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { question: "I extend the standards of Schedule C for other drugs. Which schedule am I?", answer: "Schedule C1" },
         { question: "I list the drugs which can be marketed under generic names only. Which schedule am I?", answer: "Schedule W" },
         { question: "I set the standards for biological products. Which schedule am I?", answer: "Schedule C" },
-        { question: "I ENSURE that antibiotics are not missused. Which schedule am I?", answer: "Schedule HX" },
-        { Prepared By:- Lalit Nimekar (36),
-                        Maharishi Ahirrao (37),
-                        3rd Year B. Pharm,
-                        Dr. D. Y. Patil College of Pharmacy, Akurdi, Pune.},
-                        
+        { question: "I ENSURE that antibiotics are not missused. Which schedule am I?", answer: "Schedule HX" }
     ];
 
-    const riddlesContainer = document.getElementById('riddles-container');
+    const riddlesContainer = document.getElementById('riddles');
 
     riddles.forEach((riddle, index) => {
         const riddleDiv = document.createElement('div');
@@ -84,4 +79,9 @@ function showAnswer(index, correctAnswer) {
     answerPara.style.display = 'block';
     answerPara.style.color = 'green';
     answerPara.textContent = `The answer is: ${correctAnswer}`;
+}
+
+function closePopup() {
+    document.getElementById('overlay').classList.add('hidden');
+    document.getElementById('popup').classList.add('hidden');
 }
